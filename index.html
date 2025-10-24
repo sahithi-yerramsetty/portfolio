@@ -266,12 +266,18 @@
         <img src="https://cdn-icons-png.flaticon.com/512/2721/2721299.png" alt="Skills">
         <h4>Skills</h4>
       </div>
+      <div class="icon-card" onclick="toggleContent('workExpContent')">
+        <img src="https://cdn-icons-png.flaticon.com/512/869/869636.png" alt="Work Experience">
+        <h4>Work Experience</h4>
+      </div>
     </div>
 
+    <!-- About -->
     <div id="aboutContent" class="icon-content">
       <p>Hi! I'm <strong>Sahithi Yerramsetty</strong> — a passionate Data Engineer and Analyst who loves blending technology with creativity. I enjoy building scalable data pipelines and crafting visually engaging insights that drive better decisions.</p>
     </div>
 
+    <!-- Education -->
     <div id="educationContent" class="icon-content">
       <ul>
         <li><strong>Arizona State University (ASU), Tempe, AZ</strong> — MS in Information Technology (2024)</li>
@@ -279,6 +285,7 @@
       </ul>
     </div>
 
+    <!-- Skills -->
     <div id="skillsContent" class="icon-content">
       <ul>
         <li><strong>Programming:</strong> Python, Java, SQL, C, HTML/CSS, PHP</li>
@@ -289,46 +296,45 @@
       </ul>
     </div>
 
-    <h3 style="margin-top:40px;">Work Experience</h3>
+    <!-- Work Experience -->
+    <div id="workExpContent" class="icon-content">
+      <div class="card">
+        <strong>Data Analyst – Deloitte USI (Kroger Pharmaceuticals)</strong>
+        <ul>
+          <li>Managed ETL processes validating 3TB of data ensuring data reliability.</li>
+          <li>Developed 15+ pharmaceutical data models integrating clinical, sales, and supply chain data.</li>
+          <li>Accelerated Azure & Databricks pipelines (35% faster on 400M+ records).</li>
+          <li>Built Power BI dashboards enabling 20% faster decisions.</li>
+          <li>Automated SQL generation using Python, reducing script time by 33%.</li>
+        </ul>
+      </div>
 
-    <div class="card">
-      <strong>Data Analyst – Deloitte USI (Kroger Pharmaceuticals)</strong>
-      <ul>
-        <li>Managed ETL processes validating 3TB of data across multiple databases ensuring data reliability.</li>
-        <li>Developed and integrated 15+ pharmaceutical data models for clinical, sales, and supply chain data.</li>
-        <li>Accelerated Azure & Databricks pipelines to process 400M+ records daily (35% faster).</li>
-        <li>Built Power BI reports driving 20% faster decision-making.</li>
-        <li>Automated SQL generation via Python utilities reducing script creation time by 33%.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <strong>Data Science Intern – Internship Studio (Hyderabad, India)</strong>
-      <ul>
-        <li>Built a Random Forest Regression model predicting YouTube ad views with 94.3% accuracy.</li>
-        <li>Optimized performance via Grid Search and Cross-Validation.</li>
-      </ul>
+      <div class="card">
+        <strong>Data Science Intern – Internship Studio (Hyderabad, India)</strong>
+        <ul>
+          <li>Built a Random Forest Regression model predicting YouTube ad views with 94.3% accuracy.</li>
+          <li>Optimized performance via Grid Search and Cross-Validation.</li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <!-- Projects Section -->
   <div class="section" id="projects">
     <h3>Projects</h3>
-    <div id="projectsContent" class="icon-content active">
-      <button class="collapsible">Real-Time Data Pipeline on Azure</button>
-      <div class="content">
-        <p>Developed a real-time data pipeline on Azure improving deployment efficiency by 25%.</p>
-      </div>
+    <button class="collapsible">Real-Time Data Pipeline on Azure</button>
+    <div class="content">
+      <p>Developed a real-time data pipeline on Azure improving deployment efficiency by 25%.</p>
+    </div>
 
-      <button class="collapsible">TechDocs – Document Management System</button>
-      <div class="content">
-        <p>Co-developed a full-stack app with Spring Boot, MySQL, React, and JWT authentication. <a href="https://github.com/srilathamummadi/GL-IIITH-TechDocs" target="_blank">View on GitHub</a></p>
-      </div>
+    <button class="collapsible">TechDocs – Document Management System</button>
+    <div class="content">
+      <p>Co-developed a full-stack app with Spring Boot, MySQL, React, and JWT authentication. <a href="https://github.com/srilathamummadi/GL-IIITH-TechDocs" target="_blank">View on GitHub</a></p>
+    </div>
 
-      <button class="collapsible">Bank Survey ML Model</button>
-      <div class="content">
-        <p>Analyzed banking survey data using Python and PySpark, improving accuracy to 92% and reducing manual reporting time by 40%.</p>
-      </div>
+    <button class="collapsible">Bank Survey ML Model</button>
+    <div class="content">
+      <p>Analyzed banking survey data using Python and PySpark, improving accuracy to 92% and reducing manual reporting time by 40%.</p>
     </div>
   </div>
 
