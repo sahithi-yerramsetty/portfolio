@@ -91,46 +91,32 @@
     font-size: 13px;
   }
 
-  /* Collapsible */
-  .collapsible {
+  /* Skills Section */
+  #home .card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #home .card li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  #home .card li strong {
+    color: #1DB954; /* Spotify Green for headings */
+    font-weight: 600;
+  }
+
+  #home .card {
     background-color: #181818;
-    color: #fff;
-    cursor: pointer;
-    padding: 15px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 16px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    position: relative;
+    border-left: 4px solid #1DB954;
+    transition: background 0.3s;
   }
 
-  .collapsible::after {
-    content: "▼";
-    position: absolute;
-    right: 20px;
-    font-size: 12px;
-    transition: transform 0.3s;
-  }
-
-  .activeCollapsible::after {
-    transform: rotate(-180deg);
-  }
-
-  .activeCollapsible,
-  .collapsible:hover {
-    background-color: #282828;
-  }
-
-  .content {
-    padding: 0 15px;
-    display: none;
-    overflow: hidden;
-    background-color: #121212;
-    margin-bottom: 10px;
-    border-left: 3px solid #1DB954;
+  #home .card:hover {
+    background-color: #222;
   }
 
   /* Certifications */
@@ -149,9 +135,10 @@
   }
 
   .cert-card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    width: 180px;
+    height: auto;
+    margin: 0 auto 10px auto;
+    display: block;
   }
 
   /* Contact Info Boxes */
@@ -167,7 +154,6 @@
     color: #fff;
     text-decoration: none;
   }
-  
 </style>
 </head>
 
@@ -182,10 +168,11 @@
       Portfolio
     </h2>
     <div class="nav">
-      <a class="active" onclick="showSection('home')">Home</a>
-      <a onclick="showSection('certifications')">Certifications</a>
-      <a onclick="showSection('resume')">Resume</a>
-      <a onclick="showSection('contact')">Contact Info</a>
+      <a class="active" onclick="showSection('home')">🏠 Home</a>
+      <a onclick="showSection('projects')">🎵 Projects</a>
+      <a onclick="showSection('certifications')">📜 Certifications</a>
+      <a onclick="showSection('resume')">📄 Resume</a>
+      <a onclick="showSection('contact')">📬 Contact Info</a>
     </div>
   </div>
   <footer>
@@ -206,7 +193,7 @@
         <li>Developed and integrated 15+ pharmaceutical data models for clinical, sales, and supply chain datasets, enabling accurate analysis and cross-team reporting.</li>
         <li>Accelerated Azure & Databricks pipelines to process 400M+ records daily, improving data pipeline efficiency by 35%.</li>
         <li>Engineered and maintained interactive 7 Power BI reports using curated views in Synapse, driving 20% faster decision-making for business units.</li>
-        <li>Optimized Python utility to generate SQL scripts for Databricks, enabling user-defined inputs (e.g., database, table, keys) and reducing script creation time by 33%.</li>
+        <li>Optimized Python utility to generate SQL scripts for Databricks, enabling user-defined inputs and reducing script creation time by 33%.</li>
         <li>Monitored daily ETL workflows via ServiceNow, resolving P1/P2 incidents to ensure uninterrupted data operations.</li>
         <li>Designed and tested tailored data feeds for AbbVie Pharmaceuticals, enhancing information delivery precision by 15%.</li>
         <li>Enhanced the automated testing framework, reducing validation time by 32% and improving error detection by 13%.</li>
@@ -234,12 +221,26 @@
     </div>
   </div>
 
+  <!-- Projects Section -->
+  <div class="section" id="projects">
+    <h3>Projects</h3>
+    <div class="card">
+      <ul>
+        <li><strong>Real-Time Data Pipeline on Azure:</strong> Developed a real-time data pipeline on Azure to improve deployment efficiency by 25%.</li>
+        <li><strong>TechDocs – Document Management System:</strong> Co-developed a full-stack app with Spring Boot, MySQL, React, and JWT authentication. 
+          <a href="https://github.com/srilathamummadi/GL-IIITH-TechDocs" target="_blank">View on GitHub</a>
+        </li>
+        <li><strong>Bank Survey ML Model:</strong> Analyzed banking survey data using Python and PySpark, improving model accuracy to 92% and reducing manual reporting time by 40%.</li>
+      </ul>
+    </div>
+  </div>
+
   <!-- Certifications Section -->
   <div class="section" id="certifications">
     <h3>Certifications</h3>
     <div class="cert-container">
       <div class="cert-card">
-        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg" alt="DP-900 Certification Badge">
+        <img src="https://query.prod.cms.rt.microsoft.com/cms/api/am/imageFileData/RWLUzA" alt="Microsoft Certified: Azure Data Fundamentals (DP-900)">
         <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/DP-900_Cer.pdf" target="_blank" style="color:#fff; text-decoration:none;">Microsoft Certified: Azure Data Fundamentals (DP-900)</a></p>
       </div>
     </div>
@@ -256,7 +257,6 @@
       </span>
     </div>
   </div>
-
 
   <!-- Contact Info Section -->
   <div class="section" id="contact">
