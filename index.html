@@ -179,6 +179,64 @@
     border-radius: 8px;
     margin-bottom: 10px;
   }
+
+  /* Home icons */
+  .icon-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .icon-card {
+    background-color: #181818;
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s;
+  }
+
+  .icon-card:hover {
+    background-color: #282828;
+  }
+
+  .icon-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .icon-card span {
+    font-size: 14px;
+  }
+
+  .icon-content {
+    display: none;
+    margin-top: 20px;
+  }
+
+  .icon-content.active {
+    display: block;
+  }
+
+  /* Contact Info Boxes */
+  .contact-box {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .contact-box span, .contact-box a {
+    color: #fff;
+    text-decoration: none;
+  }
 </style>
 </head>
 
@@ -206,73 +264,106 @@
 
   <!-- Home Section -->
   <div class="section active" id="home">
-    <h3>About Me</h3>
-    <div class="card">
-      <p>Hi, I’m <strong>Sahithi Yerramsetty</strong>. A techie with a creative mind, passionate about data engineering, analytics, and cloud solutions. I love transforming complex data into actionable insights using Azure, Databricks, and Power BI.</p>
+    <div class="icon-grid">
+      <div class="icon-card" onclick="toggleContent('aboutContent')">
+        <img src="https://img.icons8.com/ios-filled/50/1DB954/user.png" alt="About Me">
+        <span>About Me</span>
+      </div>
+      <div class="icon-card" onclick="toggleContent('educationContent')">
+        <img src="https://img.icons8.com/ios-filled/50/1DB954/graduation-cap.png" alt="Education">
+        <span>Education</span>
+      </div>
+      <div class="icon-card" onclick="toggleContent('workContent')">
+        <img src="https://img.icons8.com/ios-filled/50/1DB954/briefcase.png" alt="Work Experience">
+        <span>Work Experience</span>
+      </div>
+      <div class="icon-card" onclick="toggleContent('skillsContent')">
+        <img src="https://img.icons8.com/ios-filled/50/1DB954/skills.png" alt="Skills">
+        <span>Skills</span>
+      </div>
+      <div class="icon-card" onclick="toggleContent('projectsContent')">
+        <img src="https://img.icons8.com/ios-filled/50/1DB954/code.png" alt="Projects">
+        <span>Projects</span>
+      </div>
     </div>
 
-    <h3>Education</h3>
-    <button class="collapsible">Arizona State University (2025) - M.S. in Information Technology, Phoenix, AZ</button>
-    <div class="content">
-      <ul>
-        <li>Data Engineering</li>
-        <li>Cloud Computing</li>
-        <li>Machine Learning</li>
-        <li>Big Data Analytics</li>
-      </ul>
+    <!-- About Me -->
+    <div id="aboutContent" class="icon-content">
+      <div class="card">
+        <p>Hi, I’m <strong>Sahithi Yerramsetty</strong>. A techie with a creative mind, passionate about data engineering, analytics, and cloud solutions. I love transforming complex data into actionable insights using Azure, Databricks, and Power BI.</p>
+      </div>
     </div>
 
-    <button class="collapsible">G. Narayanamma Institute of Technology and Science (2021) - B.E. in ECE, Hyderabad, India</button>
-    <div class="content">
-      <ul>
-        <li>Digital Electronics</li>
-        <li>Signals and Systems</li>
-        <li>Microprocessors</li>
-        <li>Communication Systems</li>
-      </ul>
+    <!-- Education -->
+    <div id="educationContent" class="icon-content">
+      <button class="collapsible">Arizona State University (2025) - M.S. in IT, Phoenix, AZ</button>
+      <div class="content">
+        <ul>
+          <li>Data Engineering</li>
+          <li>Cloud Computing</li>
+          <li>Machine Learning</li>
+          <li>Big Data Analytics</li>
+        </ul>
+      </div>
+
+      <button class="collapsible">G. Narayanamma Institute of Technology and Science (2021) - B.E. in ECE, Hyderabad, India</button>
+      <div class="content">
+        <ul>
+          <li>Digital Electronics</li>
+          <li>Signals and Systems</li>
+          <li>Microprocessors</li>
+          <li>Communication Systems</li>
+        </ul>
+      </div>
     </div>
 
-    <h3>Work Experience</h3>
-    <div class="card">
-      <div class="title">Data Analyst – Deloitte USI, Hyderabad</div>
-      <div class="subtitle">Sept 2022 – Dec 2023</div>
-      <p>Worked on data pipelines for Kroger Pharmaceuticals, refining ETL processes across 3TB of daily data and improving efficiency by 35%. Built Power BI dashboards and optimized Databricks workflows.</p>
+    <!-- Work Experience -->
+    <div id="workContent" class="icon-content">
+      <div class="card">
+        <div class="title">Data Analyst – Deloitte USI, Hyderabad</div>
+        <div class="subtitle">Sept 2022 – Dec 2023</div>
+        <p>Worked on data pipelines for Kroger Pharmaceuticals, refining ETL processes across 3TB of daily data and improving efficiency by 35%. Built Power BI dashboards and optimized Databricks workflows.</p>
+      </div>
+
+      <div class="card">
+        <div class="title">Data Science Intern – Internship Studio</div>
+        <div class="subtitle">Dec 2020 – Jan 2021</div>
+        <p>Built a Random Forest Regression model predicting YouTube ad views with 94.3% accuracy. Focused on data cleaning and model optimization using Grid Search and Cross-Validation.</p>
+      </div>
     </div>
 
-    <div class="card">
-      <div class="title">Data Science Intern – Internship Studio</div>
-      <div class="subtitle">Dec 2020 – Jan 2021</div>
-      <p>Built a Random Forest Regression model predicting YouTube ad views with 94.3% accuracy. Focused on data cleaning and model optimization using Grid Search and Cross-Validation.</p>
+    <!-- Skills -->
+    <div id="skillsContent" class="icon-content">
+      <div class="skills-container">
+        <div class="skill">Python</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Azure</div>
+        <div class="skill">Databricks</div>
+        <div class="skill">Power BI</div>
+        <div class="skill">PySpark</div>
+        <div class="skill">Spring Boot</div>
+        <div class="skill">React</div>
+        <div class="skill">ETL</div>
+        <div class="skill">Machine Learning</div>
+      </div>
     </div>
 
-    <h3>Skills</h3>
-    <div class="skills-container">
-      <div class="skill">Python</div>
-      <div class="skill">SQL</div>
-      <div class="skill">Azure</div>
-      <div class="skill">Databricks</div>
-      <div class="skill">Power BI</div>
-      <div class="skill">PySpark</div>
-      <div class="skill">Spring Boot</div>
-      <div class="skill">React</div>
-      <div class="skill">ETL</div>
-      <div class="skill">Machine Learning</div>
-    </div>
+    <!-- Projects -->
+    <div id="projectsContent" class="icon-content">
+      <button class="collapsible">Real-Time Data Pipeline on Azure</button>
+      <div class="content">
+        <p>Developed a real-time data pipeline on Azure to improve deployment efficiency by 25%.</p>
+      </div>
 
-    <h3>Projects</h3>
-    <button class="collapsible">Real-Time Data Pipeline on Azure</button>
-    <div class="content">
-      <p>Developed a real-time data pipeline on Azure to improve deployment efficiency by 25%.</p>
-    </div>
+      <button class="collapsible">TechDocs – Document Management System</button>
+      <div class="content">
+        <p>Co-developed a full-stack app with Spring Boot, MySQL, React, and JWT authentication. <a href="https://github.com/srilathamummadi/GL-IIITH-TechDocs" target="_blank">View on GitHub</a></p>
+      </div>
 
-    <button class="collapsible">TechDocs – Document Management System</button>
-    <div class="content">
-      <p>Co-developed a full-stack app with Spring Boot, MySQL, React, and JWT authentication. <a href="https://github.com/srilathamummadi/GL-IIITH-TechDocs" target="_blank">View on GitHub</a></p>
-    </div>
-
-    <button class="collapsible">Bank Survey ML Model</button>
-    <div class="content">
-      <p>Analyzed banking survey data using Python and PySpark, improving model accuracy to 92% and reducing manual reporting time by 40%.</p>
+      <button class="collapsible">Bank Survey ML Model</button>
+      <div class="content">
+        <p>Analyzed banking survey data using Python and PySpark, improving model accuracy to 92% and reducing manual reporting time by 40%.</p>
+      </div>
     </div>
   </div>
 
@@ -289,7 +380,7 @@
     <div class="cert-container">
       <div class="cert-card">
         <img src="https://via.placeholder.com/150" alt="Certification">
-        <p>Azure Data Engineer</p>
+        <p><a href="https://github.com/sahithi301/DP-900_Cer.pdf" target="_blank" style="color:#fff; text-decoration:none;">Azure Data Fundamentals (DP-900)</a></p>
       </div>
       <div class="cert-card">
         <img src="https://via.placeholder.com/150" alt="Certification">
@@ -301,16 +392,18 @@
   <!-- Resume Section -->
   <div class="section" id="resume">
     <h3>Resume</h3>
-    <p><a href="https://github.com/sahithi301/sahithi-resume.pdf" target="_blank">View/Download Resume</a></p>
+    <p><a href="https://github.com/sahithi301/Sahithi_Yerramsetty_CV_SDE.pdf" target="_blank">View/Download Resume</a></p>
   </div>
 
   <!-- Contact Info Section -->
   <div class="section" id="contact">
     <h3>Contact Info</h3>
-    <p>Email: <a href="mailto:sahithi.us36@gmail.com">sahithi.us36@gmail.com</a></p>
-    <p>Phone: +1 123-456-7890</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/sahithi-yerramsetty" target="_blank">linkedin.com/in/sahithi-yerramsetty</a></p>
-    <p>GitHub: <a href="https://github.com/sahithi301" target="_blank">github.com/sahithi301</a></p>
+    <div style="display:flex; flex-direction:column; gap:15px; margin-top:20px;">
+      <div class="contact-box"><strong>Email:</strong> <span>sahithi.us36@gmail.com</span></div>
+      <div class="contact-box"><strong>Phone:</strong> <span>+1 123-456-7890</span></div>
+      <div class="contact-box"><strong>LinkedIn:</strong> <span><a href="https://www.linkedin.com/in/sahithi-yerramsetty" target="_blank">linkedin.com/in/sahithi-yerramsetty</a></span></div>
+      <div class="contact-box"><strong>GitHub:</strong> <span><a href="https://github.com/sahithi301" target="_blank">github.com/sahithi301</a></span></div>
+    </div>
   </div>
 
 </div>
@@ -323,6 +416,12 @@
 
     document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
     event.target.classList.add('active');
+  }
+
+  // Toggle home icon content
+  function toggleContent(id) {
+    document.querySelectorAll('.icon-content').forEach(el => el.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
   }
 
   // Collapsible Education & Projects
@@ -359,4 +458,3 @@
 
 </body>
 </html>
-
