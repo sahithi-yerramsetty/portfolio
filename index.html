@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Sahithi Yerramsetty | Data Engineer Portfolio</title>
+
 <style>
   body {
     margin: 0;
@@ -39,7 +40,8 @@
     cursor: pointer;
   }
 
-  .nav a:hover, .nav a.active {
+  .nav a:hover,
+  .nav a.active {
     color: #1DB954;
   }
 
@@ -114,9 +116,23 @@
     font-size: 16px;
     border-radius: 8px;
     margin-bottom: 10px;
+    position: relative;
   }
 
-  .activeCollapsible, .collapsible:hover {
+  .collapsible::after {
+    content: "▼";
+    position: absolute;
+    right: 20px;
+    font-size: 12px;
+    transition: transform 0.3s;
+  }
+
+  .activeCollapsible::after {
+    transform: rotate(-180deg);
+  }
+
+  .activeCollapsible,
+  .collapsible:hover {
     background-color: #282828;
   }
 
@@ -233,7 +249,8 @@
     margin-bottom: 15px;
   }
 
-  .contact-box span, .contact-box a {
+  .contact-box span,
+  .contact-box a {
     color: #fff;
     text-decoration: none;
   }
@@ -368,7 +385,8 @@
       <div class="content">
         <p>Analyzed banking survey data using Python and PySpark, improving model accuracy to 92% and reducing manual reporting time by 40%.</p>
       </div>
-  </div>
+    </div>
+  </div> <!-- ✅ closes #home section -->
 
   <!-- Search Section -->
   <div class="section" id="search">
@@ -391,7 +409,7 @@
   <!-- Resume Section -->
   <div class="section" id="resume">
     <h3>Resume</h3>
-    <p><a href="https://github.com/sahithi301/Sahithi_Yerramsetty_CV_SDE.pdf" target="_blank">View/Download Resume</a></p>
+    <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/Sahithi_Yerramsetty_CV_SDE.pdf" target="_blank">View/Download Resume</a></p>
   </div>
 
   <!-- Contact Info Section -->
@@ -401,7 +419,7 @@
       <div class="contact-box"><strong>Email:</strong> <span>sahithi.us36@gmail.com</span></div>
       <div class="contact-box"><strong>Phone:</strong> <span>+1 623-297-1556</span></div>
       <div class="contact-box"><strong>LinkedIn:</strong> <span><a href="https://www.linkedin.com/in/sahithi-yerramsetty" target="_blank">linkedin.com/in/sahithi-yerramsetty</a></span></div>
-      <div class="contact-box"><strong>GitHub:</strong> <span><a href="https://github.com/sahithi-yerramsetty" target="_blank">github.com/sahithi301</a></span></div>
+      <div class="contact-box"><strong>GitHub:</strong> <span><a href="https://github.com/sahithi-yerramsetty" target="_blank">github.com/sahithi-yerramsetty</a></span></div>
     </div>
   </div>
 
@@ -412,7 +430,6 @@
   function showSection(sectionId) {
     document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
     document.getElementById(sectionId).classList.add('active');
-
     document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
     event.target.classList.add('active');
   }
