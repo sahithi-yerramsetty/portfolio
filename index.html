@@ -29,6 +29,14 @@
     color: #1DB954;
     font-weight: 700;
     margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sidebar h2 img {
+    width: 28px;
+    height: 28px;
   }
 
   .nav a {
@@ -66,6 +74,57 @@
     margin-bottom: 20px;
   }
 
+  /* Icon grid for Home */
+  .icon-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .icon-card {
+    background-color: #181818;
+    border-radius: 15px;
+    padding: 25px;
+    width: 180px;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+
+  .icon-card:hover {
+    transform: scale(1.05);
+    background-color: #222;
+    border: 2px solid #1DB954;
+  }
+
+  .icon-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+
+  .icon-card h4 {
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .icon-content {
+    display: none;
+    margin-top: 20px;
+    background-color: #181818;
+    border-left: 4px solid #1DB954;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .icon-content.active {
+    display: block;
+  }
+
+  /* Cards */
   .card {
     background-color: #181818;
     padding: 20px;
@@ -78,45 +137,50 @@
     background-color: #282828;
   }
 
-  .card a {
+  .card strong {
     color: #1DB954;
-    text-decoration: none;
-    font-weight: 600;
   }
 
-  footer {
-    text-align: center;
-    padding: 15px;
-    color: #b3b3b3;
-    font-size: 13px;
-  }
-
-  /* Skills Section */
-  #home .card ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  #home .card li {
-    margin-bottom: 10px;
-    font-size: 15px;
-    line-height: 1.5;
-  }
-
-  #home .card li strong {
-    color: #1DB954; /* Spotify Green for headings */
-    font-weight: 600;
-  }
-
-  #home .card {
+  /* Collapsible buttons */
+  .collapsible {
     background-color: #181818;
-    border-left: 4px solid #1DB954;
-    transition: background 0.3s;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    position: relative;
   }
 
-  #home .card:hover {
-    background-color: #222;
+  .collapsible::after {
+    content: "▼";
+    position: absolute;
+    right: 20px;
+    font-size: 12px;
+    transition: transform 0.3s;
+  }
+
+  .activeCollapsible::after {
+    transform: rotate(-180deg);
+  }
+
+  .activeCollapsible,
+  .collapsible:hover {
+    background-color: #282828;
+  }
+
+  .content {
+    padding: 0 15px;
+    display: none;
+    overflow: hidden;
+    background-color: #121212;
+    margin-bottom: 10px;
+    border-left: 3px solid #1DB954;
   }
 
   /* Certifications */
@@ -130,18 +194,17 @@
     background-color: #181818;
     border-radius: 10px;
     padding: 15px;
-    width: 200px;
+    width: 220px;
     text-align: center;
   }
 
   .cert-card img {
-    width: 180px;
-    height: auto;
-    margin: 0 auto 10px auto;
-    display: block;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
   }
 
-  /* Contact Info Boxes */
+  /* Contact & Resume Boxes */
   .contact-box {
     background-color: #333;
     padding: 15px;
@@ -149,10 +212,16 @@
     margin-bottom: 15px;
   }
 
-  .contact-box span,
   .contact-box a {
-    color: #fff;
+    color: #1DB954;
     text-decoration: none;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    color: #b3b3b3;
+    font-size: 13px;
   }
 </style>
 </head>
@@ -162,22 +231,19 @@
 <!-- Sidebar -->
 <div class="sidebar">
   <div>
-    <h2 style="display:flex; align-items:center; gap:10px;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" 
-           alt="Spotify Logo" style="width:30px; height:30px;">
+    <h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify Logo">
       Portfolio
     </h2>
     <div class="nav">
       <a class="active" onclick="showSection('home')">🏠 Home</a>
-      <a onclick="showSection('projects')">🎵 Projects</a>
+      <a onclick="showSection('projects')">🧠 Projects</a>
       <a onclick="showSection('certifications')">📜 Certifications</a>
       <a onclick="showSection('resume')">📄 Resume</a>
       <a onclick="showSection('contact')">📬 Contact Info</a>
     </div>
   </div>
-  <footer>
-    <p>© 2025 Sahithi Yerramsetty</p>
-  </footer>
+  <footer>© 2025 Sahithi Yerramsetty</footer>
 </div>
 
 <!-- Main Content -->
@@ -185,32 +251,35 @@
 
   <!-- Home Section -->
   <div class="section active" id="home">
-    <h3>Work Experience</h3>
-    <div class="card">
-      <strong>Data Analyst – Deloitte USI, Hyderabad (Kroger Pharmaceuticals, Data Engineering Focus)</strong>
+    <h3>Welcome</h3>
+
+    <div class="icon-grid">
+      <div class="icon-card" onclick="toggleContent('aboutContent')">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="About">
+        <h4>About Me</h4>
+      </div>
+      <div class="icon-card" onclick="toggleContent('educationContent')">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Education">
+        <h4>Education</h4>
+      </div>
+      <div class="icon-card" onclick="toggleContent('skillsContent')">
+        <img src="https://cdn-icons-png.flaticon.com/512/2721/2721299.png" alt="Skills">
+        <h4>Skills</h4>
+      </div>
+    </div>
+
+    <div id="aboutContent" class="icon-content">
+      <p>Hi! I'm <strong>Sahithi Yerramsetty</strong> — a passionate Data Engineer and Analyst who loves blending technology with creativity. I enjoy building scalable data pipelines and crafting visually engaging insights that drive better decisions.</p>
+    </div>
+
+    <div id="educationContent" class="icon-content">
       <ul>
-        <li>Managed and refined daily ETL processes for Kroger Pharmaceuticals, validating 3TB of EPRN information across multiple databases to ensure reliability and integrity for reporting.</li>
-        <li>Developed and integrated 15+ pharmaceutical data models for clinical, sales, and supply chain datasets, enabling accurate analysis and cross-team reporting.</li>
-        <li>Accelerated Azure & Databricks pipelines to process 400M+ records daily, improving data pipeline efficiency by 35%.</li>
-        <li>Engineered and maintained interactive 7 Power BI reports using curated views in Synapse, driving 20% faster decision-making for business units.</li>
-        <li>Optimized Python utility to generate SQL scripts for Databricks, enabling user-defined inputs and reducing script creation time by 33%.</li>
-        <li>Monitored daily ETL workflows via ServiceNow, resolving P1/P2 incidents to ensure uninterrupted data operations.</li>
-        <li>Designed and tested tailored data feeds for AbbVie Pharmaceuticals, enhancing information delivery precision by 15%.</li>
-        <li>Enhanced the automated testing framework, reducing validation time by 32% and improving error detection by 13%.</li>
+        <li><strong>Arizona State University (ASU), Tempe, AZ</strong> — MS in Information Technology (2024)</li>
+        <li><strong>Jawaharlal Nehru Technological University (JNTU), Hyderabad, India</strong> — B.Tech in Computer Science (2021)</li>
       </ul>
     </div>
 
-    <div class="card">
-      <strong>Data Science Intern – Internship Studio, Hyderabad, India (Dec 2020 – Jan 2021)</strong>
-      <ul>
-        <li>Engineered a Random Forest Regression model to predict YouTube ad views using historical data, achieving 94.3% accuracy.</li>
-        <li>Processed and cleaned datasets to ensure high-quality data, enhancing model performance through Grid Search and Cross-Validation.</li>
-        <li>Calibrated parameters to achieve better predictive accuracy and model reliability.</li>
-      </ul>
-    </div>
-
-    <h3>Skills Summary</h3>
-    <div class="card">
+    <div id="skillsContent" class="icon-content">
       <ul>
         <li><strong>Programming:</strong> Python, Java, SQL, C, HTML/CSS, PHP</li>
         <li><strong>Data Visualization:</strong> Power BI, Tableau, Excel, Matplotlib, Seaborn</li>
@@ -219,19 +288,47 @@
         <li><strong>Frameworks/Libraries:</strong> PySpark, Pandas, NumPy, Scikit-learn, Flask</li>
       </ul>
     </div>
+
+    <h3 style="margin-top:40px;">Work Experience</h3>
+
+    <div class="card">
+      <strong>Data Analyst – Deloitte USI (Kroger Pharmaceuticals)</strong>
+      <ul>
+        <li>Managed ETL processes validating 3TB of data across multiple databases ensuring data reliability.</li>
+        <li>Developed and integrated 15+ pharmaceutical data models for clinical, sales, and supply chain data.</li>
+        <li>Accelerated Azure & Databricks pipelines to process 400M+ records daily (35% faster).</li>
+        <li>Built Power BI reports driving 20% faster decision-making.</li>
+        <li>Automated SQL generation via Python utilities reducing script creation time by 33%.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <strong>Data Science Intern – Internship Studio (Hyderabad, India)</strong>
+      <ul>
+        <li>Built a Random Forest Regression model predicting YouTube ad views with 94.3% accuracy.</li>
+        <li>Optimized performance via Grid Search and Cross-Validation.</li>
+      </ul>
+    </div>
   </div>
 
   <!-- Projects Section -->
   <div class="section" id="projects">
     <h3>Projects</h3>
-    <div class="card">
-      <ul>
-        <li><strong>Real-Time Data Pipeline on Azure:</strong> Developed a real-time data pipeline on Azure to improve deployment efficiency by 25%.</li>
-        <li><strong>TechDocs – Document Management System:</strong> Co-developed a full-stack app with Spring Boot, MySQL, React, and JWT authentication. 
-          <a href="https://github.com/srilathamummadi/GL-IIITH-TechDocs" target="_blank">View on GitHub</a>
-        </li>
-        <li><strong>Bank Survey ML Model:</strong> Analyzed banking survey data using Python and PySpark, improving model accuracy to 92% and reducing manual reporting time by 40%.</li>
-      </ul>
+    <div id="projectsContent" class="icon-content active">
+      <button class="collapsible">Real-Time Data Pipeline on Azure</button>
+      <div class="content">
+        <p>Developed a real-time data pipeline on Azure improving deployment efficiency by 25%.</p>
+      </div>
+
+      <button class="collapsible">TechDocs – Document Management System</button>
+      <div class="content">
+        <p>Co-developed a full-stack app with Spring Boot, MySQL, React, and JWT authentication. <a href="https://github.com/srilathamummadi/GL-IIITH-TechDocs" target="_blank">View on GitHub</a></p>
+      </div>
+
+      <button class="collapsible">Bank Survey ML Model</button>
+      <div class="content">
+        <p>Analyzed banking survey data using Python and PySpark, improving accuracy to 92% and reducing manual reporting time by 40%.</p>
+      </div>
     </div>
   </div>
 
@@ -240,8 +337,8 @@
     <h3>Certifications</h3>
     <div class="cert-container">
       <div class="cert-card">
-        <img src="https://query.prod.cms.rt.microsoft.com/cms/api/am/imageFileData/RWLUzA" alt="Microsoft Certified: Azure Data Fundamentals (DP-900)">
-        <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/DP-900_Cer.pdf" target="_blank" style="color:#fff; text-decoration:none;">Microsoft Certified: Azure Data Fundamentals (DP-900)</a></p>
+        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg" alt="DP-900 Badge">
+        <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/DP-900_Cer.pdf" target="_blank" style="color:#fff;">Microsoft Certified: Azure Data Fundamentals (DP-900)</a></p>
       </div>
     </div>
   </div>
@@ -251,14 +348,11 @@
     <h3>Resume</h3>
     <div class="contact-box">
       <strong>Resume:</strong>
-      <span>
-        <a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/Sahithi_Yerramsetty_CV_SDE.pdf" 
-           target="_blank">View/Download Resume</a>
-      </span>
+      <span><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/Sahithi_Yerramsetty_CV_SDE.pdf" target="_blank">View/Download Resume</a></span>
     </div>
   </div>
 
-  <!-- Contact Info Section -->
+  <!-- Contact Section -->
   <div class="section" id="contact">
     <h3>Contact Info</h3>
     <div class="contact-box"><strong>Email:</strong> <span>sahithi.us36@gmail.com</span></div>
@@ -270,13 +364,26 @@
 </div>
 
 <script>
-  // Sidebar navigation
   function showSection(sectionId) {
-    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-    document.getElementById(sectionId).classList.add('active');
-    document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
-    event.target.classList.add('active');
+    document.querySelectorAll(".section").forEach(sec => sec.classList.remove("active"));
+    document.getElementById(sectionId).classList.add("active");
+    document.querySelectorAll(".nav a").forEach(a => a.classList.remove("active"));
+    event.target.classList.add("active");
   }
+
+  function toggleContent(id) {
+    const element = document.getElementById(id);
+    element.classList.toggle("active");
+  }
+
+  const collapsibles = document.querySelectorAll(".collapsible");
+  collapsibles.forEach(button => {
+    button.addEventListener("click", function() {
+      this.classList.toggle("activeCollapsible");
+      const content = this.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+  });
 </script>
 
 </body>
