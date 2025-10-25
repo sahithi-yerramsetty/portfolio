@@ -187,8 +187,10 @@
 #certifications {
   margin-top: 40px;
   text-align: center;
+  padding: 40px; /* adds even space around the entire section */
 }
 
+/* Title */
 #certifications h3 {
   font-size: 1.8rem;
   margin-bottom: 20px;
@@ -198,15 +200,17 @@
 /* Grid Layout */
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px; /* space between boxes */
   justify-items: center;
-  margin-top: 20px;
+  align-items: start;
+  padding: 20px; /* space around edges so cards aren’t stuck to sides */
+  box-sizing: border-box;
 }
 
 /* Individual Certification Cards */
 .cert-card {
-  background-color: #1e1e1e; /* grey card background */
+  background-color: #1e1e1e;
   border-radius: 12px;
   padding: 20px;
   width: 260px;
@@ -240,7 +244,6 @@
 .cert-card a:hover {
   color: #1db954; /* Spotify green hover */
 }
-
 
   /* Contact & Resume Boxes */
   .contact-box {
@@ -410,24 +413,24 @@
 
     <!-- SEDS Certification -->
     <div class="cert-card">
-      <img src="https://github.com/sahithi-yerramsetty/portfolio/blob/main/logos/IITHYD.png" alt="IIIT Hyderbad SEDS program">
+      <img src="https://raw.githubusercontent.com/sahithi-yerramsetty/portfolio/blob/main/logos/IITHYD.png" alt="IIIT Hyderbad SEDS program">
       <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/SAHITHI%20YERRAMSETTY%20-%20great_learningpdf.pdf" target="_blank">Software Engineering For Data Science</a></p>
     </div>
     
     <!-- AWS-DE Certification -->
     <div class="cert-card">
-      <img src="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/aws-academy-graduate-data-engineering-training-badg.png" alt="AWS Academy">
+      <img src="https://raw.githubusercontent.com/sahithi-yerramsetty/portfolio/blob/main/certs/aws-academy-graduate-data-engineering-training-badg.png" alt="AWS Academy">
       <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/DEcertificate.pdf" target="_blank">Data Engineering</a></p>
     </div>
 
     <!-- AWS-MLfoundations Certification -->
     <div class="cert-card">
-      <img src="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/aws-academy-graduate-machine-learning-foundations-t.png" alt="AWS Academy">
+      <img src="https://raw.githubusercontent.com/sahithi-yerramsetty/portfolio/blob/main/certs/aws-academy-graduate-machine-learning-foundations-t.png" alt="AWS Academy">
       <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/MLFoundations.pdf" target="_blank">Machine Learning Foundations</a></p>
     </div>
       <!-- AWS-MLin NLP Certification -->
     <div class="cert-card">
-      <img src="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/aws-academy-graduate-machine-learning-for-natural-l.png" alt="AWS Academy">
+      <img src="https://raw.githubusercontent.com/sahithi-yerramsetty/portfolio/blob/main/certs/aws-academy-graduate-machine-learning-for-natural-l.png" alt="AWS Academy">
       <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/MLinNLP.pdf" target="_blank">Machine Learning for NLP/a></p>
     </div>
 
