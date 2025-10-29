@@ -184,66 +184,65 @@
   }
 
   /* Certifications Section */
-#certifications {
-  margin-top: 40px;
-  text-align: center;
-  padding: 40px; /* adds even space around the entire section */
-}
+  #certifications {
+    margin-top: 40px;
+    text-align: center;
+    padding: 40px;
+  }
 
-/* Title */
-#certifications h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #fff;
-}
+  /* Title */
+  #certifications h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
 
-/* Grid Layout */
-.cert-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px; /* space between boxes */
-  justify-items: center;
-  align-items: start;
-  padding: 20px; /* space around edges so cards aren’t stuck to sides */
-  box-sizing: border-box;
-}
+  /* Grid Layout */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    align-items: start;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 
-/* Individual Certification Cards */
-.cert-card {
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  padding: 20px;
-  width: 260px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+  /* Individual Certification Cards */
+  .cert-card {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 20px;
+    width: 260px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
 
-.cert-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
-}
+  .cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+  }
 
-/* Certification Images */
-.cert-card img {
-  width: 90px;
-  height: auto;
-  margin-bottom: 12px;
-  border-radius: 6px;
-}
+  /* Certification Images */
+  .cert-card img {
+    width: 90px;
+    height: auto;
+    margin-bottom: 12px;
+    border-radius: 6px;
+  }
 
-/* Certification Links */
-.cert-card a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-  display: block;
-  line-height: 1.4;
-}
+  /* Certification Links */
+  .cert-card a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    line-height: 1.4;
+  }
 
-.cert-card a:hover {
-  color: #1db954; /* Spotify green hover */
-}
+  .cert-card a:hover {
+    color: #1db954;
+  }
 
   /* Contact & Resume Boxes */
   .contact-box {
@@ -277,11 +276,11 @@
       Sahithi's Portfolio
     </h2>
     <div class="nav">
-      <a class="active" onclick="showSection('home')">🏠 Home</a>
-      <a onclick="showSection('projects')">🧠 Projects</a>
-      <a onclick="showSection('certifications')">📜 Certifications</a>
-      <a onclick="showSection('resume')">📄 Resume</a>
-      <a onclick="showSection('contact')">📬 Contact Info</a>
+      <a class="active" onclick="showSection(event, 'home', this)">🏠 Home</a>
+      <a onclick="showSection(event, 'projects', this)">🧠 Projects</a>
+      <a onclick="showSection(event, 'certifications', this)">📜 Certifications</a>
+      <a onclick="showSection(event, 'resume', this)">📄 Resume</a>
+      <a onclick="showSection(event, 'contact', this)">📬 Contact Info</a>
     </div>
   </div>
   <footer>© 2025 Sahithi Yerramsetty</footer>
@@ -307,135 +306,123 @@
         <img src="https://cdn-icons-png.flaticon.com/512/2721/2721299.png" alt="Skills">
         <h4>Skills</h4>
       </div>
-      <div class="icon-card" onclick="toggleContent('experienceContent')">
+      <div class="icon-card" onclick="toggleContent('experienceContent')"><!-- FIXED: id matched -->
         <img src="https://cdn-icons-png.flaticon.com/512/869/869636.png" alt="Work Experience">
         <h4>Work Experience</h4>
       </div>
     </div>
 
     <!-- About -->
-<div id="aboutContent" class="icon-content">
-  <p>Hi! I'm <strong>Sahithi Yerramsetty</strong></p>
+    <div id="aboutContent" class="icon-content">
+      <p>Hi! I'm <strong>Sahithi Yerramsetty</strong></p>
+      <p>🎧 <strong>Now Playing: “Sahithi Yerramsetty – Turning Data Into Harmony”</strong></p>
+      <p><strong>Who I Am:</strong><br>
+      Hi! I’m <strong>Sahithi Yerramsetty</strong>, a passionate <strong>Data Engineer and Analyst</strong> who sees data as more than just rows and columns — to me, it’s rhythm, structure, and story all at once. I love designing data experiences that feel alive — transforming scattered, messy datasets into well-orchestrated pipelines that flow as seamlessly as a great song.</p>
+      <p><strong>Where It All Began:</strong><br>
+      My journey with data started during my undergrad, when I took a Python course and built a simple <strong>machine learning project that predicted YouTube ad views</strong>. It wasn’t a massive system, but seeing a model learn and forecast for the first time felt magical. That spark of turning raw data into something meaningful set me on a path I never looked back from.</p>
+      <p><strong>What Drives Me:</strong><br>
+      Since then, my curiosity for solving data puzzles has only grown. I’ve worked on real-world projects involving <strong>ETL optimization, data modeling, and visualization</strong>, where I’ve learned that data engineering isn’t just about efficiency — it’s about creativity. I enjoy exploring cloud ecosystems like <strong>Azure and AWS</strong>, orchestrating workflows in <strong>Databricks</strong>, and bringing data to life through tools like <strong>Power BI</strong> and <strong>Tableau</strong>.</p>
+      <p>For me, every dataset tells a story — and I love being the one who helps uncover it. Whether it’s debugging a complex SQL query, designing a scalable data architecture, or visualizing insights that drive decisions, I treat each challenge like composing a new track — balancing logic with imagination.</p>
+      <p><strong>My Work Philosophy:</strong><br>
+      I believe great data work blends <strong>precision, design, and empathy</strong>. Good data systems don’t just process — they communicate, they empower, they inspire. That’s why I’m constantly experimenting with new techniques, automations, and frameworks to make data not only accessible, but enjoyable to work with.</p>
+      <p><strong>What Roles I’m Interested In:</strong><br>
+      🎵 <strong>Data Engineering</strong> – Building reliable, scalable pipelines and data platforms that power intelligent systems.<br>
+      🎵 <strong>Data Science</strong> – Applying machine learning and statistical modeling to uncover patterns and drive smarter decisions.<br>
+      🎵 <strong>Software Engineering</strong> – Writing clean, efficient, and creative code that connects data to experience.</p>
+      <p>At heart, I’m a storyteller who uses data as my instrument — blending creativity with technical precision to craft meaningful experiences. For me, <strong>data engineering is where logic meets art</strong>, and I’m here to keep composing the next movement.</p>
+    </div>
 
-  <p>🎧 <strong>Now Playing: “Sahithi Yerramsetty – Turning Data Into Harmony”</strong></p>
-
-  <p><strong>Who I Am:</strong><br>
-  Hi! I’m <strong>Sahithi Yerramsetty</strong>, a passionate <strong>Data Engineer and Analyst</strong> who sees data as more than just rows and columns — to me, it’s rhythm, structure, and story all at once. I love designing data experiences that feel alive — transforming scattered, messy datasets into well-orchestrated pipelines that flow as seamlessly as a great song.</p>
-
-  <p><strong>Where It All Began:</strong><br>
-  My journey with data started during my undergrad, when I took a Python course and built a simple <strong>machine learning project that predicted YouTube ad views</strong>. It wasn’t a massive system, but seeing a model learn and forecast for the first time felt magical. That spark of turning raw data into something meaningful set me on a path I never looked back from.</p>
-
-  <p><strong>What Drives Me:</strong><br>
-  Since then, my curiosity for solving data puzzles has only grown. I’ve worked on real-world projects involving <strong>ETL optimization, data modeling, and visualization</strong>, where I’ve learned that data engineering isn’t just about efficiency — it’s about creativity. I enjoy exploring cloud ecosystems like <strong>Azure and AWS</strong>, orchestrating workflows in <strong>Databricks</strong>, and bringing data to life through tools like <strong>Power BI</strong> and <strong>Tableau</strong>.</p>
-
-  <p>For me, every dataset tells a story — and I love being the one who helps uncover it. Whether it’s debugging a complex SQL query, designing a scalable data architecture, or visualizing insights that drive decisions, I treat each challenge like composing a new track — balancing logic with imagination.</p>
-
-  <p><strong>My Work Philosophy:</strong><br>
-  I believe great data work blends <strong>precision, design, and empathy</strong>. Good data systems don’t just process — they communicate, they empower, they inspire. That’s why I’m constantly experimenting with new techniques, automations, and frameworks to make data not only accessible, but enjoyable to work with.</p>
-
-  <p><strong>What Roles I’m Interested In:</strong><br>
-  🎵 <strong>Data Engineering</strong> – Building reliable, scalable pipelines and data platforms that power intelligent systems.<br>
-  🎵 <strong>Data Science</strong> – Applying machine learning and statistical modeling to uncover patterns and drive smarter decisions.<br>
-  🎵 <strong>Software Engineering</strong> – Writing clean, efficient, and creative code that connects data to experience.</p>
-
-  <p>At heart, I’m a storyteller who uses data as my instrument — blending creativity with technical precision to craft meaningful experiences. For me, <strong>data engineering is where logic meets art</strong>, and I’m here to keep composing the next movement.</p>
-</div>
-
-
- <!-- Education -->
-<div id="educationContent" class="icon-content">
-  <h2>🎓 Education</h2>
-  <ul>
-    <li>
-      <strong>Arizona State University (ASU)</strong>, Tempe, AZ, USA — 
-      <em>Master of Science in Information Technology</em> <span>(Jan 2024 – Dec 2025)</span><br>
-      <strong>GPA:</strong> 4.00 / 4.00
+    <!-- Education -->
+    <div id="educationContent" class="icon-content">
+      <h2>🎓 Education</h2>
       <ul>
-        <li><strong>Specialization:</strong> Data Engineering, Analytics, and Intelligent Information Systems</li>
-        <li><strong>Relevant Coursework:</strong></li>
-        <ul>
-          <li>Advanced Big Data Analytics</li>
-          <li>Natural Language Processing</li>
-          <li>Principles of Computer Information and Architecture</li>
-          <li>Data Visualization and Reporting</li>
-          <li>Advanced Database Management</li>
-          <li>Data in Cloud Information Technology</li>
-        </ul>
-        <li>Focused on designing <strong>scalable data pipelines</strong>, managing <strong>cloud-based architectures</strong>, and translating complex datasets into <strong>interactive, insight-driven visualizations</strong>.</li>
-        <li>Applied tools such as <strong>Python, SQL, Azure, Databricks, Power BI, and Tableau</strong> to build automated workflows and high-performance data systems.</li>
+        <li>
+          <strong>Arizona State University (ASU)</strong>, Tempe, AZ, USA — 
+          <em>Master of Science in Information Technology</em> <span>(Jan 2024 – Dec 2025)</span><br>
+          <strong>GPA:</strong> 4.00 / 4.00
+          <ul>
+            <li><strong>Specialization:</strong> Data Engineering, Analytics, and Intelligent Information Systems</li>
+            <li><strong>Relevant Coursework:</strong></li>
+            <ul>
+              <li>Advanced Big Data Analytics</li>
+              <li>Natural Language Processing</li>
+              <li>Principles of Computer Information and Architecture</li>
+              <li>Data Visualization and Reporting</li>
+              <li>Advanced Database Management</li>
+              <li>Data in Cloud Information Technology</li>
+            </ul>
+            <li>Focused on designing <strong>scalable data pipelines</strong>, managing <strong>cloud-based architectures</strong>, and translating complex datasets into <strong>interactive, insight-driven visualizations</strong>.</li>
+            <li>Applied tools such as <strong>Python, SQL, Azure, Databricks, Power BI, and Tableau</strong> to build automated workflows and high-performance data systems.</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>G. Narayanamma Institute of Technology and Science</strong> (Affiliated to JNTU), Hyderabad, India — 
+          <em>Bachelor of Technology in Electronics and Communication Engineering</em> <span>(Jul 2018 – Apr 2022)</span><br>
+          <strong>GPA:</strong> 8.51 / 10.00
+          <ul>
+            <li>Built a strong foundation in <strong>digital systems, embedded technologies, and communication networks</strong>.</li>
+            <li>Completed projects integrating <strong>signal processing</strong> and <strong>data analysis</strong>, sparking my interest in programming and data-driven systems.</li>
+            <li>Developed <strong>analytical and problem-solving skills</strong> that shaped my structured approach to <strong>data architecture, optimization, and engineering</strong>.</li>
+          </ul>
+        </li>
       </ul>
-    </li>
-
-    <li>
-      <strong>G. Narayanamma Institute of Technology and Science</strong> (Affiliated to JNTU), Hyderabad, India — 
-      <em>Bachelor of Technology in Electronics and Communication Engineering</em> <span>(Jul 2018 – Apr 2022)</span><br>
-      <strong>GPA:</strong> 8.51 / 10.00
-      <ul>
-        <li>Built a strong foundation in <strong>digital systems, embedded technologies, and communication networks</strong>.</li>
-        <li>Completed projects integrating <strong>signal processing</strong> and <strong>data analysis</strong>, sparking my interest in programming and data-driven systems.</li>
-        <li>Developed <strong>analytical and problem-solving skills</strong> that shaped my structured approach to <strong>data architecture, optimization, and engineering</strong>.</li>
-      </ul>
-    </li>
-  </ul>
-</div>
-
-
+    </div>
 
     <!-- Skills -->
-   <div id="skillsContent" class="icon-content">
-  <h2>💡 Technical Skills</h2>
-  <ul>
-    <li>🎯 <strong>Programming:</strong> Python, Java, SQL, C, HTML/CSS, PHP</li>
-    <li>📊 <strong>Data Visualization:</strong> Power BI, Tableau, Excel, Matplotlib, Seaborn</li>
-    <li>🗄️ <strong>Databases:</strong> Oracle, MySQL, SQL Server, PostgreSQL</li>
-    <li>☁️ <strong>Cloud & DevOps:</strong> AWS, Azure, GCP, Databricks, Docker, Kubernetes, Jira, Git, ServiceNow</li>
-    <li>⚙️ <strong>Frameworks & Libraries:</strong> PySpark, Pandas, NumPy, Scikit-learn, Flask</li>
-  </ul>
+    <div id="skillsContent" class="icon-content">
+      <h2>💡 Technical Skills</h2>
+      <ul>
+        <li>🎯 <strong>Programming:</strong> Python, Java, SQL, C, HTML/CSS, PHP</li>
+        <li>📊 <strong>Data Visualization:</strong> Power BI, Tableau, Excel, Matplotlib, Seaborn</li>
+        <li>🗄️ <strong>Databases:</strong> Oracle, MySQL, SQL Server, PostgreSQL</li>
+        <li>☁️ <strong>Cloud & DevOps:</strong> AWS, Azure, GCP, Databricks, Docker, Kubernetes, Jira, Git, ServiceNow</li>
+        <li>⚙️ <strong>Frameworks & Libraries:</strong> PySpark, Pandas, NumPy, Scikit-learn, Flask</li>
+      </ul>
 
-  <h2>🤝 Soft Skills</h2>
-  <ul>
-    <li>🧠 <strong>Analytical Thinking:</strong> Skilled at breaking down complex problems and deriving actionable insights from data.</li>
-    <li>💬 <strong>Communication:</strong> Able to explain technical concepts clearly to both technical and non-technical audiences.</li>
-    <li>👩‍💻 <strong>Collaboration:</strong> Experienced working in agile, cross-functional teams to deliver data-driven solutions efficiently.</li>
-    <li>🚀 <strong>Adaptability:</strong> Thrive in fast-paced environments and enjoy learning new tools and technologies quickly.</li>
-    <li>🎨 <strong>Creativity:</strong> Combine logic and design thinking to create elegant, impactful data solutions.</li>
-    <li>🎯 <strong>Attention to Detail:</strong> Ensure data accuracy, system reliability, and seamless user experience in every project.</li>
-  </ul>
-</div>
-
+      <h2>🤝 Soft Skills</h2>
+      <ul>
+        <li>🧠 <strong>Analytical Thinking:</strong> Skilled at breaking down complex problems and deriving actionable insights from data.</li>
+        <li>💬 <strong>Communication:</strong> Able to explain technical concepts clearly to both technical and non-technical audiences.</li>
+        <li>👩‍💻 <strong>Collaboration:</strong> Experienced working in agile, cross-functional teams to deliver data-driven solutions efficiently.</li>
+        <li>🚀 <strong>Adaptability:</strong> Thrive in fast-paced environments and enjoy learning new tools and technologies quickly.</li>
+        <li>🎨 <strong>Creativity:</strong> Combine logic and design thinking to create elegant, impactful data solutions.</li>
+        <li>🎯 <strong>Attention to Detail:</strong> Ensure data accuracy, system reliability, and seamless user experience in every project.</li>
+      </ul>
+    </div>
 
     <!-- Work Experience -->
-<div id="experienceContent" class="icon-content">
-  <h2>💼 Work Experience</h2>
-  <ul>
-    <li>
-      <strong>Data Analyst – Deloitte USI (Kroger Pharmaceuticals)</strong> 
-      <span>(Hyderabad, India | Sept 2022 – Dec 2023)</span>
+    <div id="experienceContent" class="icon-content">
+      <h2>💼 Work Experience</h2>
       <ul>
-        <li>🧩 Managed and refined daily <strong>ETL processes</strong> validating <strong>3TB+</strong> of EPRN data across multiple databases, ensuring <strong>99.9% data accuracy</strong> and reliability for downstream analytics.</li>
-        <li>📊 Developed and integrated <strong>15+ pharmaceutical data models</strong> combining clinical, sales, and supply chain data, enabling unified business reporting and faster insights.</li>
-        <li>⚡ Optimized <strong>Azure and Databricks pipelines</strong> processing <strong>400M+ records/day</strong>, improving data efficiency and runtime by <strong>35%</strong>.</li>
-        <li>📈 Built and maintained <strong>7 interactive Power BI dashboards</strong> using curated Synapse views, driving <strong>20% faster decision-making</strong> across departments.</li>
-        <li>🤖 Automated <strong>SQL script generation</strong> using Python, reducing manual script creation time by <strong>33%</strong> and standardizing ETL logic.</li>
-        <li>🛠️ Monitored and resolved <strong>P1/P2 incidents</strong> via ServiceNow to maintain uninterrupted data workflows and high system uptime.</li>
-        <li>🔗 Designed and tested <strong>custom data feeds for AbbVie Pharmaceuticals</strong>, enhancing delivery precision by <strong>15%</strong>.</li>
-        <li>✅ Enhanced automated testing frameworks, reducing validation time by <strong>32%</strong> and improving error detection by <strong>13%</strong>.</li>
-      </ul>
-    </li>
+        <li>
+          <strong>Data Analyst – Deloitte USI (Kroger Pharmaceuticals)</strong> 
+          <span>(Hyderabad, India | Sept 2022 – Dec 2023)</span>
+          <ul>
+            <li>🧩 Managed and refined daily <strong>ETL processes</strong> validating <strong>3TB+</strong> of EPRN data across multiple databases, ensuring <strong>99.9% data accuracy</strong> and reliability for downstream analytics.</li>
+            <li>📊 Developed and integrated <strong>15+ pharmaceutical data models</strong> combining clinical, sales, and supply chain data, enabling unified business reporting and faster insights.</li>
+            <li>⚡ Optimized <strong>Azure and Databricks pipelines</strong> processing <strong>400M+ records/day</strong>, improving data efficiency and runtime by <strong>35%</strong>.</li>
+            <li>📈 Built and maintained <strong>7 interactive Power BI dashboards</strong> using curated Synapse views, driving <strong>20% faster decision-making</strong> across departments.</li>
+            <li>🤖 Automated <strong>SQL script generation</strong> using Python, reducing manual script creation time by <strong>33%</strong> and standardizing ETL logic.</li>
+            <li>🛠️ Monitored and resolved <strong>P1/P2 incidents</strong> via ServiceNow to maintain uninterrupted data workflows and high system uptime.</li>
+            <li>🔗 Designed and tested <strong>custom data feeds for AbbVie Pharmaceuticals</strong>, enhancing delivery precision by <strong>15%</strong>.</li>
+            <li>✅ Enhanced automated testing frameworks, reducing validation time by <strong>32%</strong> and improving error detection by <strong>13%</strong>.</li>
+          </ul>
+        </li>
 
-    <li>
-      <strong>Data Science Intern – Internship Studio</strong> 
-      <span>(Hyderabad, India | Dec 2020 – Jan 2021)</span>
-      <ul>
-        <li>🧠 Built a <strong>Random Forest Regression model</strong> to predict YouTube ad views using historical data, achieving <strong>94.3% accuracy</strong>.</li>
-        <li>🧹 Processed, cleaned, and optimized large datasets to ensure high-quality training data and consistent performance.</li>
-        <li>🔍 Tuned hyperparameters via <strong>Grid Search</strong> and applied <strong>Cross-Validation</strong> techniques to enhance model reliability and generalization.</li>
-        <li>📊 Delivered visual performance summaries and actionable insights to demonstrate business value and audience engagement trends.</li>
+        <li>
+          <strong>Data Science Intern – Internship Studio</strong> 
+          <span>(Hyderabad, India | Dec 2020 – Jan 2021)</span>
+          <ul>
+            <li>🧠 Built a <strong>Random Forest Regression model</strong> to predict YouTube ad views using historical data, achieving <strong>94.3% accuracy</strong>.</li>
+            <li>🧹 Processed, cleaned, and optimized large datasets to ensure high-quality training data and consistent performance.</li>
+            <li>🔍 Tuned hyperparameters via <strong>Grid Search</strong> and applied <strong>Cross-Validation</strong> techniques to enhance model reliability and generalization.</li>
+            <li>📊 Delivered visual performance summaries and actionable insights to demonstrate business value and audience engagement trends.</li>
+          </ul>
+        </li>
       </ul>
-    </li>
-  </ul>
-</div>
-
+    </div>
+  </div>
 
   <!-- Projects Section -->
   <div class="section" id="projects">
@@ -451,16 +438,16 @@
       <p>Ensured scalability and security of the solution by leveraging Azure cloud infrastructure and implementing best practices for data encryption and user authentication.</p>
       <p>Collaborated with cross-functional teams to refine the system and incorporate real-time feedback to drive continuous improvement.</p>
       <p>
-    <strong>GitHub Repository:</strong>
-    <a href="https://github.com/srilathamummadi/GL-IIITH-TechDocs" target="_blank" rel="noopener noreferrer">
-      TechDocs on GitHub
-    </a>
-  </p>
+        <strong>GitHub Repository:</strong>
+        <a href="https://github.com/srilathamummadi/GL-IIITH-TechDocs" target="_blank" rel="noopener noreferrer">
+          TechDocs on GitHub
+        </a>
+      </p>
     </div>
 
     <button class="collapsible">TechDocs – Document Management System</button>
     <div class="content">
-      <p>Co-developed a full-stack app with Spring Boot, MySQL, React, and JWT authentication. <a href="https://github.com/srilathamummadi/GL-IIITH-TechDocs" target="_blank">View on GitHub</a></p>
+      <p>Co-developed a full-stack app with Spring Boot, MySQL, React, and JWT authentication. <a href="https://github.com/srilathamummadi/GL-IIITH-TechDocs" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
     </div>
 
     <button class="collapsible">Bank Survey ML Model</button>
@@ -471,55 +458,55 @@
     </div>
   </div>
 
-<!-- Certifications Section -->
-<div class="section" id="certifications">
-  <h3>Certifications</h3>
-  <div class="cert-grid">
-    
-    <!-- Microsoft Certification -->
-    <div class="cert-card">
-      <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg" alt="DP-900 Badge">
-      <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/DP-900_Cer.pdf" target="_blank">Microsoft Certified: Azure Data Fundamentals (DP-900)</a></p>
-    </div>
+  <!-- Certifications Section -->
+  <div class="section" id="certifications">
+    <h3>Certifications</h3>
+    <div class="cert-grid">
+      <!-- Microsoft Certification -->
+      <div class="cert-card">
+        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg" alt="DP-900 Badge">
+        <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/DP-900_Cer.pdf" target="_blank" rel="noopener noreferrer">Microsoft Certified: Azure Data Fundamentals (DP-900)</a></p>
+      </div>
 
-    <!-- Deloitte Certification -->
-    <div class="cert-card">
-      <img src="https://raw.githubusercontent.com/sahithi-yerramsetty/portfolio/main/logos/deloitte.png" alt="Deloitte AI Academy">
-      <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/Deloitte_AI_Academy_USI_Certificate_Yerramsetty%20Sahithi.pdf" target="_blank">Deloitte AI Academy Certification</a></p>
-    </div>
+      <!-- Deloitte Certification -->
+      <div class="cert-card">
+        <img src="https://raw.githubusercontent.com/sahithi-yerramsetty/portfolio/main/logos/deloitte.png" alt="Deloitte AI Academy">
+        <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/Deloitte_AI_Academy_USI_Certificate_Yerramsetty%20Sahithi.pdf" target="_blank" rel="noopener noreferrer">Deloitte AI Academy Certification</a></p>
+      </div>
 
-    <!-- SEDS Certification -->
-    <div class="cert-card">
-      <img src="https://raw.githubusercontent.com/sahithi-yerramsetty/portfolio/main/logos/IITHYD.png" alt="IIIT Hyderbad SEDS program">
-      <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/SAHITHI%20YERRAMSETTY%20-%20great_learningpdf.pdf" target="_blank">Software Engineering For Data Science</a></p>
-    </div>
-    
-    <!-- AWS-DE Certification -->
-    <div class="cert-card">
-      <img src="https://raw.githubusercontent.com/sahithi-yerramsetty/portfolio/main/certs/aws-academy-graduate-data-engineering-training-badg.png" alt="AWS Academy">
-      <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/DEcertificate.pdf" target="_blank">Data Engineering</a></p>
-    </div>
+      <!-- SEDS Certification -->
+      <div class="cert-card">
+        <img src="https://raw.githubusercontent.com/sahithi-yerramsetty/portfolio/main/logos/IITHYD.png" alt="IIIT Hyderbad SEDS program">
+        <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/SAHITHI%20YERRAMSETTY%20-%20great_learningpdf.pdf" target="_blank" rel="noopener noreferrer">Software Engineering For Data Science</a></p>
+      </div>
+      
+      <!-- AWS-DE Certification -->
+      <div class="cert-card">
+        <img src="https://raw.githubusercontent.com/sahithi-yerramsetty/portfolio/main/certs/aws-academy-graduate-data-engineering-training-badg.png" alt="AWS Academy Data Engineering Badge">
+        <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/DEcertificate.pdf" target="_blank" rel="noopener noreferrer">Data Engineering</a></p>
+      </div>
 
-    <!-- AWS-MLfoundations Certification -->
-    <div class="cert-card">
-      <img src="https://raw.githubusercontent.com/sahithi-yerramsetty/portfolio/main/certs/aws-academy-graduate-machine-learning-foundations-t.png" alt="AWS Academy">
-      <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/MLFoundations.pdf" target="_blank">Machine Learning Foundations</a></p>
-    </div>
-      <!-- AWS-MLin NLP Certification -->
-    <div class="cert-card">
-      <img src="https://raw.githubusercontent.com/sahithi-yerramsetty/portfolio/main/certs/aws-academy-graduate-machine-learning-for-natural-l.png" alt="AWS Academy">
-      <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/MLinNLP.pdf" target="_blank">Machine Learning for NLP</a></p>
-    </div>
+      <!-- AWS-ML Foundations Certification -->
+      <div class="cert-card">
+        <img src="https://raw.githubusercontent.com/sahithi-yerramsetty/portfolio/main/certs/aws-academy-graduate-machine-learning-foundations-t.png" alt="AWS Academy ML Foundations Badge">
+        <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/MLFoundations.pdf" target="_blank" rel="noopener noreferrer">Machine Learning Foundations</a></p>
+      </div>
 
+      <!-- AWS-ML in NLP Certification (FIXED closing tag) -->
+      <div class="cert-card">
+        <img src="https://raw.githubusercontent.com/sahithi-yerramsetty/portfolio/main/certs/aws-academy-graduate-machine-learning-for-natural-l.png" alt="AWS Academy ML for NLP Badge">
+        <p><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/certs/MLinNLP.pdf" target="_blank" rel="noopener noreferrer">Machine Learning for NLP</a></p>
+      </div>
+
+    </div>
   </div>
-</div>
   
   <!-- Resume Section -->
   <div class="section" id="resume">
     <h3>Resume</h3>
     <div class="contact-box">
       <strong>Resume:</strong>
-      <span><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/Sahithi_Yerramsetty_CV_SDE.pdf" target="_blank">View/Download Resume</a></span>
+      <span><a href="https://github.com/sahithi-yerramsetty/portfolio/blob/main/Sahithi_Yerramsetty_CV_SDE.pdf" target="_blank" rel="noopener noreferrer">View/Download Resume</a></span>
     </div>
   </div>
 
@@ -528,31 +515,42 @@
     <h3>Contact Info</h3>
     <div class="contact-box"><strong>Email:</strong> <span>sahithi.us36@gmail.com</span></div>
     <div class="contact-box"><strong>Phone:</strong> <span>+1 (623)-297-1556</span></div>
-    <div class="contact-box"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sahithi-yerramsetty" target="_blank">linkedin.com/in/sahithi-yerramsetty</a></div>
-    <div class="contact-box"><strong>GitHub:</strong> <a href="https://github.com/sahithi-yerramsetty" target="_blank">github.com/sahithi-yerramsetty</a></div>
+    <div class="contact-box"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sahithi-yerramsetty" target="_blank" rel="noopener noreferrer">linkedin.com/in/sahithi-yerramsetty</a></div>
+    <div class="contact-box"><strong>GitHub:</strong> <a href="https://github.com/sahithi-yerramsetty" target="_blank" rel="noopener noreferrer">github.com/sahithi-yerramsetty</a></div>
   </div>
 
 </div>
 
 <script>
-  function showSection(sectionId) {
-    document.querySelectorAll(".section").forEach(sec => sec.classList.remove("active"));
-    document.getElementById(sectionId).classList.add("active");
-    document.querySelectorAll(".nav a").forEach(a => a.classList.remove("active"));
-    event.target.classList.add("active");
+  function showSection(evt, sectionId, linkEl) {
+    // Switch visible sections
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    const next = document.getElementById(sectionId);
+    if (next) next.classList.add('active');
+
+    // Update sidebar active link
+    document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+    if (linkEl) linkEl.classList.add('active');
+
+    // Prevent default if this was called from an anchor
+    if (evt && typeof evt.preventDefault === 'function') evt.preventDefault();
   }
 
   function toggleContent(id) {
     const element = document.getElementById(id);
-    element.classList.toggle("active");
+    if (element) {
+      element.classList.toggle('active');
+    }
   }
 
-  const collapsibles = document.querySelectorAll(".collapsible");
+  const collapsibles = document.querySelectorAll('.collapsible');
   collapsibles.forEach(button => {
-    button.addEventListener("click", function() {
-      this.classList.toggle("activeCollapsible");
+    button.addEventListener('click', function() {
+      this.classList.toggle('activeCollapsible');
       const content = this.nextElementSibling;
-      content.style.display = content.style.display === "block" ? "none" : "block";
+      if (content) {
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      }
     });
   });
 </script>
