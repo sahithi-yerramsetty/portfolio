@@ -475,16 +475,8 @@
     <p>Outcome: a clear end-to-end example of data engineering + ML for recommenders, from messy CSV to explainable suggestions and offline metrics you can show in a UI or export as a CSV for stakeholders.</p>
     </div>
 
-  <button class="collapsible">Personalized Book Recommendation System</button>
-    <div class="content">
-    <p>I built a user-based collaborative filtering recommender that outputs “people like you also enjoyed …”. The pipeline cleans noisy ratings (removes exact duplicates, drops invalid IDs), maps external keys (User-ID/ISBN) to internal numeric IDs, and constructs a sparse user–item matrix that’s efficient for similarity search.</p>
-    <p><strong>How I used ML:</strong> I framed recommendation as a nearest-neighbors problem on user preference vectors. After transforming ratings to a normalized preference space (mean-centered; optional binarization for implicit feedback), I used a cosine-similarity KNN model to retrieve the top-<em>k</em> neighbors for each active user. I then scored candidate books with a weighted sum over neighbor similarities and applied ranking metrics—<em>Precision@K</em>, <em>Recall@K</em>, and <em>nDCG@K</em>—on a hold-out set using time-based or stratified splits. I compared this to two ML baselines: (1) a popularity-only model and (2) a matrix-factorization variant (implicit ALS) to show uplift over non-personalized methods.</p>
-    <p>For recommendations, I calculate cosine similarity to get the top-<em>k</em> nearest neighbors for an active user, gather books those neighbors liked that the user hasn’t seen, and return a ranked list. I then join back to the books metadata so results are human-readable (title, author, year) instead of raw IDs.</p>
-    <p>The code is modular: <em>ingest → clean → build matrix → recommend → evaluate → present</em>. It’s easy to swap distance metrics (cosine, dot, Jaccard), tune <em>k</em> and rating thresholds, switch to item-based CF for very sparse data, or plug in matrix factorization (ALS/SVD) when scale grows.</p>
-    <p><strong>Tech used:</strong> Python; pandas &amp; NumPy for data wrangling; SciPy <code>csr_matrix</code> for sparse user–item matrices; scikit-learn (<code>NearestNeighbors</code>, model selection utilities) for KNN-based CF and evaluation; optional <em>implicit</em>/<em>Surprise</em> libraries for ALS/SVD baselines; Matplotlib for quick diagnostics; CSV/Parquet for artifacts; Jupyter/Colab for experimentation; (optional) PySpark/Databricks when scaling to larger datasets.</p>
-    <p>Outcome: a clear end-to-end example of data engineering + ML for recommenders, from messy CSV to explainable suggestions and offline metrics you can show in a UI or export as a CSV for stakeholders.</p>
-    </div>
-  <button class="collapsible">Personalized Book Recommendation System</button>
+
+  <button class="collapsible">Paralympic Athlete Event Management Database<</button>
     <div class="content">
     <p>I designed a relational database (SQL Server) for a Paralympic-style event with tables for Countries, Athletes, Events, Event_Results, Medals, Tickets, and Volunteers. Every table has a clean primary key and foreign keys to enforce referential integrity, so invalid references (e.g., an athlete tied to a non-existent country) are impossible.</p>
     <p>Data modeling followed 3NF: entity tables (Countries, Athletes, Events, Venues) are separated from transactional tables (Event_Results, Tickets, Volunteer_Assignments). Surrogate keys (INT IDENTITY) are used for stability, while natural keys (e.g., ISO country codes) are constrained as UNIQUE for fast lookups. Many-to-many relationships (e.g., Volunteers ↔ Events) are handled via junction tables with composite keys.</p>
