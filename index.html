@@ -425,92 +425,19 @@
   </div>
 
   <!-- Projects Section -->
- <!-- Projects Section -->
-<div class="section" id="projects">
-  <h3>Projects</h3>
-
-  <button class="collapsible">TechDocs – Real-Time Document Platform (Docker + Flask + MySQL) on Cloud</button>
-  <div class="content">
-    <p>
-      Designed and delivered a unified document platform with a real-time editing/preview backbone,
-      secure sharing, and cloud-ready deployment. The system ingests file events, persists metadata/content,
-      and serves a responsive web UI with low-latency access.
-    </p>
-
-    <ul>
-      <li><strong>Core features:</strong>
-        <ul>
-          <li>User onboarding with email/password and Google sign-in (auth + sessions).</li>
-          <li>LaTeX editor with <em>real-time preview</em> (client-side compilation) and document CRUD (save, edit, view, draft, publish).</li>
-          <li>Granular sharing (specific users/permissions), versioning workflows, and Trash management with restore.</li>
-          <li>Cloud sync connectors for Dropbox & Google Drive to keep copies in users’ storage.</li>
-          <li>Installable <strong>PWA</strong> for desktop/mobile with offline-friendly behavior.</li>
-        </ul>
-      </li>
-
-      <li><strong>Architecture:</strong>
-        <ul>
-          <li><strong>Frontend:</strong> Bootstrap + jQuery UI, Flask templating for routes/pages.</li>
-          <li><strong>Backend:</strong> Python/Flask APIs, SQLAlchemy ORM, MySQL for metadata, object filesystem mount for file ops.</li>
-          <li><strong>Infra:</strong> Dockerized services (frontend + backend) with compose; horizontal scaling of app containers.</li>
-          <li><strong>Email/SMS:</strong> Mailjet SMTP integration for notifications and account flows.</li>
-        </ul>
-      </li>
-
-      <li><strong>Cloud/DevOps:</strong>
-        <ul>
-          <li>Containerized builds for frontend & backend; <code>docker-compose up --build --scale app=3 -d</code> used to scale stateless app nodes for concurrency.</li>
-          <li>EC2 deployment steps with bind-mount for a persistent filesystem (<code>/home/ec2-user/techdocs_filesystem</code>) and central log (<code>filemanager.log</code>).</li>
-          <li>Port management for dev (e.g., 56733) and production (80/443) with a start script to bootstrap the UI container and install node packages inside Docker.</li>
-        </ul>
-      </li>
-
-      <li><strong>Security & Governance:</strong>
-        <ul>
-          <li>JWT/session-based authentication, role/claim checks at route layer, principle-of-least-privilege on document actions.</li>
-          <li>Sharable links restricted by owner policy; server-side validation to prevent unauthorized reads/writes.</li>
-          <li>Audit logging for file operations (create/update/delete/restore) via central log.</li>
-        </ul>
-      </li>
-
-      <li><strong>Performance & reliability:</strong>
-        <ul>
-          <li>Hot-path API tuning for upload, preview, and list views; reduced median document access latency (caching + query pruning).</li>
-          <li>Idempotent file writes and retry/backoff patterns for bursty uploads; container scaling to withstand peak edit sessions.</li>
-          <li>PWA installability and offline-friendly reads to mask transient network issues for end users.</li>
-        </ul>
-      </li>
-
-      <li><strong>Developer experience:</strong>
-        <ul>
-          <li>Makefile / shell scripts to standardize builds and local bringing-up of services.</li>
-          <li>Clear setup docs: clone → build → run; quick URL check on <code>http://localhost:56733</code> for dev verification.</li>
-        </ul>
-      </li>
-
-      <li><strong>Tech stack highlights:</strong>
-        <ul>
-          <li><strong>Backend:</strong> Python, Flask, SQLAlchemy, MySQL, Mailjet</li>
-          <li><strong>Frontend:</strong> Bootstrap, jQuery, Flask templates, LaTeX.js live preview</li>
-          <li><strong>Infra:</strong> Docker, docker-compose, EC2</li>
-          <li><strong>PWA:</strong> installable app experience for desktop/mobile</li>
-        </ul>
-      </li>
-    </ul>
-
-    <p><strong>GitHub Repository:</strong>
-      <a href="https://github.com/srilathamummadi/GL-IIITH-TechDocs" target="_blank" rel="noopener noreferrer">
-        TechDocs on GitHub
-      </a>
-    </p>
-
-    <p style="font-size: 0.9rem; opacity: 0.9;">
-      <em>Notes:</em> Feature list (signup/login, live LaTeX preview, cloud sync, share/permissions, trash, PWA) and tech stack
-      (Flask, SQLAlchemy, MySQL, Mailjet, Bootstrap, jQuery, LaTeX.js; Dockerized frontend/backend; EC2 + docker-compose scale)
-      are based on the project’s README and repository structure. See the repo’s README for install and deployment steps.
-    </p>
+<div class="section" id="projects"> 
+  <h3>Projects</h3> 
+  <button class="collapsible">Real-Time Data Pipeline on Azure</button> 
+  <div class="content"> <p>Developed a real-time data pipeline on Azure improving deployment efficiency by 25%.</p> 
+    <p>Co-created TechDocs Platform using Spring Boot, MySQL, Azure Blob Storage, and React.js to enable seamless document management.</p> 
+    <p>Integrated JWT-based Role-Based Access Control (RBAC) for secure, user-specific document access and management.</p> 
+    <p>Optimized data storage and retrieval processes, reducing latency in document access by 15%.</p> 
+    <p>Spearheaded design and implementation of RESTful APIs for TechDocs, ensuring smooth interaction between front-end and back-end systems.</p> 
+    <p>Led a team of developers to implement real-time data processing, ensuring high availability and fault tolerance.</p> 
+    <p>Ensured scalability and security of the solution by leveraging Azure cloud infrastructure and implementing best practices for data encryption and user authentication.</p> 
+    <p>Collaborated with cross-functional teams to refine the system and incorporate real-time feedback to drive continuous improvement.</p> 
+    <p> <strong>GitHub Repository:</strong> <a href="https://github.com/srilathamummadi/GL-IIITH-TechDocs" target="_blank" rel="noopener noreferrer"> TechDocs on GitHub </a> </p> 
   </div>
-</div>
 
 
     <button class="collapsible">Bank Survey ML Model</button>
