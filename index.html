@@ -442,9 +442,18 @@
 
     <button class="collapsible">Bank Survey ML Model</button>
     <div class="content">
-      <p>Designed and developed interactive Power BI dashboards, automating analytics and reducing manual reporting time by 40%.</p>
-      <p>Cleaned and processed large-scale banking survey data using Python and PySpark, reducing the impact of missing and inconsistent data by 15%.</p>
-      <p>Applied classification and regression models to predict customer behavior, improving overall model accuracy to 92%.</p>
+      <p>Designed and built interactive Power BI dashboards for exec/stakeholder review, automating weekly analytics and cutting manual reporting time by 40%.</p>
+      <p>Ingested, cleaned, and standardized large-scale banking survey data using Python and PySpark; reduced the impact of missing/inconsistent fields by 15% via imputation and validation rules.</p>
+      <p>Engineered a feature pipeline (demographics, product mix, tenure, channel usage, NPS verbatims → text signals) and created target labels for churn/upsell intent.</p>
+      <p>Applied and compared classification &amp; regression models (Logistic Regression, Random Forest, XGBoost/GBT); achieved 92% overall accuracy on churn intent with stratified hold-out and 5-fold cross-validation.</p>
+      <p>Tuned models with GridSearch/Hyperopt, monitored precision/recall and ROC-AUC, and set thresholds to maximize business impact (reduced false positives on high-value segments).</p>
+      <p>Built data quality checks (schema, null %, range/logic tests) and drift alerts for input features, improving reliability of weekly refreshes.</p>
+      <p>Implemented a reproducible ETL: raw → cleaned (Silver) → features/predictions (Gold) in Parquet/Delta; scheduled with Databricks Jobs/Airflow.</p>
+      <p>Created model explainability views (feature importance, SHAP-style summaries) to help product/marketing understand drivers of satisfaction and churn.</p>
+      <p>Partnered with marketing to define actionable cohorts (e.g., high-risk/high-value customers) and documented playbooks for retention offers.</p>
+      <p>Added a go/no-go QA checklist: data freshness, sample size, KPI deltas; reduced broken refreshes and rework.</p>
+      <p>Secured PII with role-based access and masked sensitive fields; published a data dictionary and dashboard usage guide.</p>
+      <p><strong>Tech:</strong> Python, PySpark, Pandas, scikit-learn, XGBoost/GBT, Databricks, Delta/Parquet, Airflow/Jobs, Power BI, Git</p>
     </div>
   </div>
 
