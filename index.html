@@ -101,11 +101,17 @@
   .section {
     display: none;
     margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
   }
 
   .section.active {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
   }
+
 
   .section h3 {
     font-size: clamp(20px, 2.5vw, 24px);
@@ -147,6 +153,60 @@
     font-size: 16px;
     margin: 0;
   }
+    .now-playing-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1.4rem;
+    border-radius: 999px;
+    background: radial-gradient(circle at top left, rgba(29, 185, 84, 0.18), #121212);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 25px rgba(29, 185, 84, 0.25);
+    margin-bottom: 1.5rem;
+  }
+
+  .now-playing-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px rgba(29, 185, 84, 0.9);
+    animation: pulse 1.4s infinite ease-in-out;
+  }
+
+  .now-playing-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .now-playing-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+  }
+
+  .now-playing-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.25);
+      opacity: 0.4;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
 
   .icon-content {
     display: none;
@@ -155,11 +215,17 @@
     border-left: 4px solid var(--accent);
     border-radius: 10px;
     padding: 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
   }
 
   .icon-content.active {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
   }
+
 
   /* Cards */
   .card {
@@ -392,8 +458,15 @@
 
     <!-- About -->
     <div id="aboutContent" class="icon-content">
+            <div class="now-playing-card">
+        <div class="now-playing-dot"></div>
+        <div class="now-playing-text">
+          <span class="now-playing-label">Now Playing</span>
+          <span class="now-playing-title">Sahithi Yerramsetty – Turning Data Into Harmony</span>
+        </div>
+      </div>
+
       <p>Hi! I'm <strong>Sahithi Yerramsetty</strong></p>
-      <p>🎧 <strong>Now Playing: “Sahithi Yerramsetty – Turning Data Into Harmony”</strong></p>
       <p><strong>Who I Am:</strong><br>
       Hi! I’m <strong>Sahithi Yerramsetty</strong>, a passionate <strong>Data Engineer and Analyst</strong> who sees data as more than just rows and columns — to me, it’s rhythm, structure, and story all at once. I love designing data experiences that feel alive — transforming scattered, messy datasets into well-orchestrated pipelines that flow as seamlessly as a great song.</p>
       <p><strong>Where It All Began:</strong><br>
