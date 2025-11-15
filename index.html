@@ -11,7 +11,7 @@
     --gap: clamp(12px, 3vw, 24px);
     --card-radius: 12px;
     --accent: #1DB954;
-    --bg: #121212;
+    --bg: #050608;
     --panel: #181818;
   }
 
@@ -21,11 +21,16 @@
   body {
     margin: 0;
     font-family: "Poppins", sans-serif;
-    background-color: var(--bg);
+    /* New gradient background */
+    background:
+      radial-gradient(circle at top left, rgba(29, 185, 84, 0.20), transparent 55%),
+      radial-gradient(circle at bottom right, rgba(80, 200, 255, 0.20), transparent 55%),
+      #050608;
     color: #fff;
     display: flex;              /* desktop: sidebar + main */
     min-height: 100vh;
   }
+
 
   /* Sidebar (desktop) / Topbar (mobile) */
   .sidebar {
