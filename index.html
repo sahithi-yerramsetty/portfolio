@@ -762,11 +762,17 @@
   }
 
   function toggleContent(id) {
-    const element = document.getElementById(id);
-    if (element) {
-      element.classList.toggle('active');
-    }
+    const clicked = document.getElementById(id);
+    if (!clicked) return;
+  
+    // Close all
+    const allContents = document.querySelectorAll('.icon-content');
+    allContents.forEach(el => el.classList.remove('active'));
+  
+    // Open the one that was clicked
+    clicked.classList.add('active');
   }
+
 
   // Collapsibles
   const collapsibles = document.querySelectorAll('.collapsible');
