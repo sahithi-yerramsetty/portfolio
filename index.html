@@ -62,15 +62,33 @@
     text-decoration: none;
     display: block;
     padding: 10px 0;
-    transition: color 0.3s;
     cursor: pointer;
     white-space: nowrap;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), #50c8ff);
+    transition: width 0.3s ease;
   }
 
   .nav a:hover,
   .nav a.active {
     color: var(--accent);
   }
+
+  .nav a:hover::after,
+  .nav a.active::after {
+    width: 100%;
+  }
+
 
   /* Main content */
   .main {
