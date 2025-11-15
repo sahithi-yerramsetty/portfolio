@@ -137,10 +137,12 @@
   }
 
   .icon-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-6px);
     background-color: #222;
     border: 2px solid var(--accent);
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.55);
   }
+
 
   .icon-card img {
     width: 60px;
@@ -233,10 +235,15 @@
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 15px;
-    transition: background 0.3s;
+    transition: background 0.3s ease, transform 0.25s ease, box-shadow 0.25s ease;
   }
 
-  .card:hover { background-color: #282828; }
+  .card:hover { 
+    background-color: #282828;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+  }
+
   .card strong { color: var(--accent); }
 
   /* Collapsible buttons */
@@ -309,8 +316,8 @@
   }
 
   .cert-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
   }
 
   .cert-card img {
